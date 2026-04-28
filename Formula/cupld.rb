@@ -30,6 +30,6 @@ class Cupld < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/cupld --version")
+    assert_match "local graph database CLI and REPL", shell_output("#{bin}/cupld --help")
   end
 end
