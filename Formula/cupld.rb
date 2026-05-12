@@ -3,21 +3,21 @@ class Cupld < Formula
   homepage "https://github.com/aeaston1/cupld"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/aeaston1/cupld/releases/download/v0.2.0/cupld-aarch64-apple-darwin.tar.xz",
-        tag: "v0.2.0"
-    sha256 "d8f00ef6d5142a22d7633cecd69e7c6f9c2752e39f7f0c5e27d50efbb0e4d016"
+    url "https://github.com/aeaston1/cupld/releases/download/v0.3.0/cupld-aarch64-apple-darwin.tar.xz",
+        tag: "v0.3.0"
+    sha256 "2888166f8e673b206abf4697f57669a17640d83d06809360a16b3516e91d5eb1"
   end
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/aeaston1/cupld/releases/download/v0.2.0/cupld-x86_64-apple-darwin.tar.xz",
-        tag: "v0.2.0"
-    sha256 "d4485ac42164f2946dda204ee7dbfba65365a17a37e88fd2d3f3091fdb3ddd9e"
+    url "https://github.com/aeaston1/cupld/releases/download/v0.3.0/cupld-x86_64-apple-darwin.tar.xz",
+        tag: "v0.3.0"
+    sha256 "84c372dae8eb4ddea6c16e80e51f9c8ba69434b3c34473479c0241a1a14502e5"
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/aeaston1/cupld/releases/download/v0.2.0/cupld-x86_64-unknown-linux-musl.tar.xz",
-        tag: "v0.2.0"
-    sha256 "660fd6a92b945aae70f0c2c5acda7483af5367afe85633ff6db7cecdd7589477"
+    url "https://github.com/aeaston1/cupld/releases/download/v0.3.0/cupld-x86_64-unknown-linux-musl.tar.xz",
+        tag: "v0.3.0"
+    sha256 "ed979fdf491bd5e0cfdd8ccb0d9f2fec97669ac1ea08e772a4e407679130f86b"
   end
   license "MIT"
 
