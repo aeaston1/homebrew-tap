@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  audit-test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Register local tap
+        run: |
+          export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+          brew tap --custom-remote aeaston1/tap "$GITHUB_WORKSPACE"
+
+      - name: Audit formula
+        run: |
+          export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+          brew audit aeaston1/tap/cupld
+
+      - name: Install and test formula
+        run: |
+          export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+          brew install aeaston1/tap/cupld
+          brew test aeaston1/tap/cupld
