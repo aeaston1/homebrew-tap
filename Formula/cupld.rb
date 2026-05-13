@@ -1,5 +1,5 @@
 class Cupld < Formula
-  desc "Local graph database CLI and REPL."
+  desc "Local graph database CLI and REPL"
   homepage "https://github.com/aeaston1/cupld"
   version "0.4.0"
   if OS.mac? && Hardware::CPU.intel?
