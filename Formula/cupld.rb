@@ -2,17 +2,13 @@ class Cupld < Formula
   desc "Local graph database CLI and REPL."
   homepage "https://github.com/aeaston1/cupld"
   version "0.4.0"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/aeaston1/cupld/releases/download/v0.4.0/cupld-aarch64-apple-darwin.tar.xz"
-      sha256 "d6fbaa2eaf53763c3832eea488b362636ea2c405c48fe966a8d4c034100b2bb1"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/aeaston1/cupld/releases/download/v0.4.0/cupld-x86_64-apple-darwin.tar.xz"
-      sha256 "48c3a6ba4fa8d0cc61aeb40597e1e3f0d6e30b16b4c3c25eaca68c34e90dcded"
-    end
-  end
-  if OS.linux? && Hardware::CPU.intel?
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/aeaston1/cupld/releases/download/v0.4.0/cupld-x86_64-apple-darwin.tar.xz"
+    sha256 "48c3a6ba4fa8d0cc61aeb40597e1e3f0d6e30b16b4c3c25eaca68c34e90dcded"
+  elsif OS.mac?
+    url "https://github.com/aeaston1/cupld/releases/download/v0.4.0/cupld-aarch64-apple-darwin.tar.xz"
+    sha256 "d6fbaa2eaf53763c3832eea488b362636ea2c405c48fe966a8d4c034100b2bb1"
+  elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/aeaston1/cupld/releases/download/v0.4.0/cupld-x86_64-unknown-linux-musl.tar.xz"
     sha256 "7fedeb0c534f65d449d1a56d6d456d767551b3f2b5046593e960a726331d8b9f"
   end
@@ -43,9 +39,7 @@ class Cupld < Formula
   end
 
   def install
-    bin.install "cupld" if OS.mac? && Hardware::CPU.arm?
-    bin.install "cupld" if OS.mac? && Hardware::CPU.intel?
-    bin.install "cupld" if OS.linux? && Hardware::CPU.intel?
+    bin.install "cupld"
 
     install_binary_aliases!
 
