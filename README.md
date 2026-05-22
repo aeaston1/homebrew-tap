@@ -8,7 +8,7 @@ Install:
 brew install aeaston1/tap/cupld
 ```
 
-Cycle is present as a draft formula until its first versioned release artifact exists:
+Install Cycle:
 
 ```bash
 brew install aeaston1/tap/cycle
