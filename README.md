@@ -1,6 +1,6 @@
 # homebrew-tap
 
-Homebrew tap for `cupld`.
+Homebrew tap for `cupld` and `cycle`.
 
 Install:
 
@@ -8,6 +8,13 @@ Install:
 brew install aeaston1/tap/cupld
 ```
 
-This tap only carries the Homebrew formula. `cupld` release assets are hosted in:
+Cycle is present as a draft formula until its first versioned release artifact exists:
+
+```bash
+brew install aeaston1/tap/cycle
+```
+
+Release assets are hosted in:
 
 - `https://github.com/aeaston1/cupld/releases`
+- `https://github.com/aeaston1/cycle/releases`
